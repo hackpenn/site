@@ -96,6 +96,11 @@
       "image": "1password.png"
     },
     {
+      "name": "Lambda School",
+      "link": "https://lambdaschool.com",
+      "image": "lambda.png"
+    },
+    {
       "name": "Repl.it",
       "link": "https://repl.it",
       "image": "replit.png"
