@@ -50,6 +50,7 @@ const Nav = ({ color = 'white', ...props }) => (
     <Inner color={color} py={[1, 0]}>
       <Flag />
       <Bar role="navigation" ml={3} align="left">
+        <Item to="/recap" children="Recap" />
       </Bar>
     </Inner>
   </Base>
