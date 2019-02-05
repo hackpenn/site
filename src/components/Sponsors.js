@@ -24,12 +24,8 @@ const Base = styled(Container)`
 const Sponsors = props => (
   <Base {...props}>
     {data[props.section].map(sponsor => (
-      <a href={`${sponsor.link}`}>
-        <img
-          alt={sponsor.name}
-          src={`/sponsors/${sponsor.image}`}
-          key={sponsor.image}
-        />
+      <a href={`${sponsor.link}`} key={sponsor.image}>
+        <img alt={sponsor.name} src={`/sponsors/${sponsor.image}`} />
       </a>
     ))}
   </Base>

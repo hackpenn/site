@@ -1,6 +1,13 @@
 import React from 'react'
-import { Box, Container, Heading, Link as A } from '@hackclub/design-system'
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  Link as A
+} from '@hackclub/design-system'
 import { theme } from 'theme'
+import data from 'data'
 import Layout from 'components/Layout'
 import Nav from 'components/Nav'
 import Headline from 'components/Headline'
@@ -28,16 +35,26 @@ export default () => (
           style={{ fontFamily: theme.mono, maxWidth: '42rem' }}
           mt={3}
         >
-          Photos from our winter 2019 event—it was a huge success!
+          Photos from our winter 2019 event — it&nbsp;was a huge success!
         </Heading.h2>
       </Container>
     </Box.header>
     <Container width={1} px={3}>
-      <Grid py={[4, 5]}>
-        {Array.from({ length: 12 }, k => k + 1).map(n => (
-          <Photo key={n} image={`/w2019_recap/${n}.jpg`} />
-        ))}
-      </Grid>
+      {data.recap.map(section => (
+        <>
+          <Headline color="primaryDark" mt={4}>
+            {section.title}
+          </Headline>
+          <Text fontSize={[3, 4]} color={theme.colors.black} mt={3}>
+            {section.description}
+          </Text>
+          <Grid py={4}>
+            {section.photos.map(n => (
+              <Photo key={n} src={`/recap/w2019/${section.prefix}-${n}.jpg`} />
+            ))}
+          </Grid>
+        </>
+      ))}
       <Headline color="primaryDark" py={3}>
         We{' '}
         <span role="img" aria-label="Green heart emoji">
