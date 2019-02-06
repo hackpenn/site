@@ -142,37 +142,5 @@
       "link": "https://www.expressvpn.com/",
       "image": "expressvpn.png"
     }
-  ],
-  "recap": [
-    {
-      "title": "Opening Ceremony",
-      "description": "Add a brief description",
-      "photos": [1, 2],
-      "prefix": "opening-ceremony"
-    },
-    {
-      "title": "Hacking Begins",
-      "description": "Add a brief description",
-      "photos": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-      "prefix": "hacking-begins"
-    },
-    {
-      "title": "Workshops!",
-      "description": "Add a brief description",
-      "photos": [1],
-      "prefix": "workshops"
-    },
-    {
-      "title": "Teams Present",
-      "description": "Add a brief description",
-      "photos": [1, 2],
-      "prefix": "judging"
-    },
-    {
-      "title": "Organizers Clean Up",
-      "description": "Add a brief description",
-      "photos": [1, 2, 3],
-      "prefix": "team"
-    }
   ]
 }
