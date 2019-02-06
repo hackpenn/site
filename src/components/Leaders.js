@@ -65,7 +65,7 @@ const Leaders = props => (
       <Leader
         name={profile.name}
         pronouns={profile.pronouns}
-        key={profile.email}
+        key={profile.name}
       />
     ))}
   </Base>
