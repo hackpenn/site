@@ -33,7 +33,7 @@ const Bar = styled(Box.withComponent('nav'))`
   }
 `
 
-const Item = styled(A.withComponent(Link)).attrs({
+const Item = styled(A).attrs({
   color: 'white',
   fontSize: [2, 3],
   my: 1,
@@ -50,7 +50,7 @@ const Nav = ({ color = 'white', ...props }) => (
     <Inner color={color} py={[1, 0]}>
       <Flag />
       <Bar role="navigation" ml={3} align="left">
-        <Item to="/recap" children="Recap" />
+        <Item href="https://2019.hackpenn.com/recap" children="Recap" />
       </Bar>
     </Inner>
   </Base>
