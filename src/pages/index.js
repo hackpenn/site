@@ -119,25 +119,8 @@ export default () => (
           style={{ fontFamily: theme.mono }}
           mt={3}
         >
-          High schoolers: learn to code with 24&nbsp;hours of fun, free food, &
-          prizes.
+          Pennsylvania’s premiere high&nbsp;school hackathon is back.
         </Heading.h1>
-        <Flex align="center" my={4}>
-          <Calendar month="January" day={19} />
-          <Text.span align="left" fontSize={[3, 4]} ml={4} className="mono">
-            <strong>Noon to noon</strong>
-            <br />
-            <A.link
-              color="inherit"
-              fontSize={[2, 3]}
-              underline
-              chevronRight
-              to="/location"
-            >
-              State&nbsp;College, PA
-            </A.link>
-          </Text.span>
-        </Flex>
       </Container>
     </Box.header>
     <Box.section bg={theme.colors.snow}>
@@ -152,144 +135,33 @@ export default () => (
           <Bannerline />
           <Headline color="primaryDark">Welcome to the “hackathon.”</Headline>
           <Lead my={3} maxWidth={48}>
-            Hack Pennsylvania was a 24-hour event where 150 programmers,
-            artists, designers, & other high schoolers from across the Northeast
-            came together to build apps & games. We provided workshops,
-            mentorship, free meals & drinks, & places to sleep. The next
-            morning, judges picked the best projects to demo and win prizes.
+            Hack Pennsylvania is a 24-hour event where 150 programmers, artists,
+            designers, & other high schoolers from across the Northeast come
+            together to build apps & games. We provide workshops, mentorship,
+            free meals & drinks, & places to sleep. The next morning, judges
+            pick the best projects to demo and win prizes.
           </Lead>
         </Container>
-        <Modules>
-          <Module
-            icon="welcome"
-            name="Beginner-oriented"
-            body="Students of all skill levels are welcome—we’ll hold multiple intro workshops & mentors will help you out!"
-          />
-          <Module
-            icon="emoji"
-            name="Endless fun"
-            body="It goes way beyond coding. Meet new friends, come to the 2am dance party, win prizes."
-          />
-          <Module
-            icon="rep"
-            name="Fabulous food"
-            body="You’ll be served Panera dinner, midnight ice cream, bagel breakfast, & continuous snacks. (alt’s available)"
-          />
-          <Module
-            icon="bag"
-            name="You woodn’t believe the prizes"
-            body="Pine over the AirPods, Google Home, Raspberry Pi, speakers, batteries, software subscriptions, & much more."
-          />
-        </Modules>
-        <Grid mt={[4, 5]} color="white">
-          <Box bg="primary" p={[3, 4]}>
-            <Heading.h3 fontSize={[4, 5]} my={0}>
-              Sprucing up PA
-            </Heading.h3>
-            <Text fontSize={3} my={2}>
-              Last spring, we ran central PA’s first community-organized HS
-              hackathon. This year, the event grows bigger + better—a tree-umph,
-              we might say.
-            </Text>
-            <LinkOut href="https://hackhappyvalley.com/recap">
-              See what happened at the last event
-            </LinkOut>
-          </Box>
-          <HiddenPhoto
-            xs
-            sm
-            aria-label="High school students coding at Hack Happy Valley"
-            src="/hackhv/1.jpg"
-          />
-          <Photo
-            aria-label="Projects being presented at Hack Happy Valley"
-            src="/hackhv/2.jpg"
-          />
-          <Box bg="primaryDark" p={[3, 4]}>
-            <Heading.h3 f={[4, 5]} my={0}>
-              Hacking‽ Is that safe?
-            </Heading.h3>
-            <Text f={3} mt={2}>
-              Hold up! No, we’re not “hacking” servers or databases. The word is
-              being constructively re-defined as building things—apps, games,
-              websites, etc. At Hack Pennsylvania, it’s all safe, supervised, &
-              entirely educational.
-            </Text>
-          </Box>
-        </Grid>
-      </Container>
-    </Box.section>
-    <Box.section
-      bg={theme.colors.primary}
-      color={theme.colors.black}
-      width={1}
-      id="FAQ"
-    >
-      <Container py={[4, 5]} px={3}>
-        <Bannerline mt={[3, 4]} bg={theme.colors.white} />
-        <Headline>FAQ</Headline>
-        <Questions>
-          <Question
-            name="How much does it cost?"
-            body="Nothing, it’s totally free. Registration and attendance are 100% free, with meals, drinks, swag, & workshops included."
-          />
-          <Question
-            name="Who can participate?"
-            body="Any current student grades 8–12. If you’re under/over that age, send us a chat (in the corner) & we’ll see what we can do."
-          />
-          <Question
-            name="What if I’m new to coding?"
-            body="Are you elemen-tree? Complete beginners are not only welcome, but expected! Learn as you go with our intro workshops & mentors."
-          />
-          <Question
-            name="What if I already know how to code?"
-            body="All skill levels are welcome. Though we primarily market to beginners, we welcome experts (& everyone in between)."
-          />
-          <Question
-            name="Do I need a team?"
-            body="Nope! You’ll have an opportunity to meet fellow hackers and make teams of up to 4—find some new friends, bring yours, or work alone."
-          />
-          <Question
-            name="What can I make?"
-            body="Anything! A website, app, game, hardware, you name it. Judges will rate projects on creativity, technical skill demonstrated, polish, & utility."
-          />
-          <Question
-            name="What should I bring?"
-            body="Student ID, computer, chargers, anything for your hack (hardware?), toiletries, & a sleeping bag (maybe). For a few dozen hackers we have $30 travel reimbursements (bring receipts)."
-          />
-          <Question
-            name="Who runs this? Is it supervised?"
-            body={
-              <>
-                We’re independently-organized by high schoolers, sponsored via
-                an intl. non-profit called{' '}
-                <A href="https://hackclub.com" color={theme.colors.accent}>
-                  Hack Club
-                </A>
-                . The event is fully supervised by over a dozen adults (with
-                background checks).
-              </>
-            }
-          />
-        </Questions>
       </Container>
     </Box.section>
     <Box.section bg={theme.colors.white}>
       <Container width={1} px={3} pt={3} pb={[4, 5, 6]}>
         <Bannerline />
-        <Headline color="primaryDark">Sponsors</Headline>
-        <Text fontSize={3} color={theme.colors.steel} mb={4}>
-          Want to sponsor Hack Pennsylvania?{' '}
-          <A
-            href="mailto:theo@hackpenn.com"
-            color={theme.colors.primary}
-            className="sans"
-            hoverline
-            chevronRight
-          >
-            Let’s chat
-          </A>
-        </Text>
+        <Headline color="primaryDark" mb={4}>
+          Recap of our winter 2019 event
+        </Headline>
+      </Container>
+    </Box.section>
+    <Box.section bg={theme.colors.snow}>
+      <Container width={1} px={3} pt={3} pb={[4, 5, 6]}>
+        <Bannerline />
+        <Headline color="primaryDark" mb={4}>
+          We{' '}
+          <span role="img" aria-label="Green heart emoji">
+            💚
+          </span>{' '}
+          our sponsors!
+        </Headline>
         <Sponsors section="sponsors" />
         <Headline
           color={theme.colors.slate}
