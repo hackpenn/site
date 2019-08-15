@@ -192,6 +192,8 @@ export const Team = props => (
         borderRadius: 'circle',
         width: [64, 72],
         height: [64, 72],
+        objectFit: 'cover',
+        objectPosition: 'center',
         mr: 3
       },
       ...props.sx
