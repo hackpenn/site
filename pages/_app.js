@@ -14,6 +14,7 @@ const fonts = `
   font-weight: normal;
   src: url('//2019.hackpenn.com/inter-ui/Inter-UI-Regular.woff2') format('woff2'),
     url('//2019.hackpenn.com/inter-ui/Inter-UI-Regular.woff') format('woff');
+  font-display: swap;
 }
 
 @font-face {
@@ -22,6 +23,7 @@ const fonts = `
   font-weight: bold;
   src: url('//2019.hackpenn.com/inter-ui/Inter-UI-Black.woff2') format('woff2'),
     url('//2019.hackpenn.com/inter-ui/Inter-UI-Black.woff') format('woff');
+  font-display: swap;
 }
 
 @font-face {
@@ -31,6 +33,7 @@ const fonts = `
     url('//2019.hackpenn.com/quattro/iAWriterQuattroS-Regular.eot') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -40,6 +43,7 @@ const fonts = `
     url('//2019.hackpenn.com/quattro/iAWriterQuattroS-Bold.eot') format('truetype');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 `
 
