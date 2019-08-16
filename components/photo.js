@@ -67,6 +67,7 @@ const Photo = ({ src, alt, showAlt, wide, ...props }) => {
       <Image
         src={src}
         alt={alt}
+        loading="lazy"
         sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
       />
       {showCaption && <Caption colorMode={colorMode} children={alt} />}
