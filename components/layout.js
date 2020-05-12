@@ -21,8 +21,8 @@ const ColorButton = ({ mode, ...props }) => (
       ':hover, :focus': {
         color: 'primary',
         boxShadow: '0 0 0 3px',
-        outline: 'none',
-      },
+        outline: 'none'
+      }
     }}
   >
     <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor">
@@ -51,14 +51,27 @@ export default (props) => {
           color: 'primary',
           alignItems: 'center',
           px: 3,
-          py: 3,
+          py: 3
         }}
       >
-        <Avatar light size={48} sx={{ mr: 3 }} />
-        <Link href="/">
-          <A variant="styles.navitem">Hack Pennsylvania</A>
+        <Link href="/" passHref>
+          <A sx={{ display: 'flex', alignItems: 'center' }}>
+            <Avatar light size={48} mr={3} />
+            <Text
+              as="span"
+              sx={{ display: ['none', 'block'] }}
+              variant="styles.navitem"
+            >
+              Hack Pennsylvania
+            </Text>
+          </A>
         </Link>
         <Box sx={{ mx: 'auto' }} />
+        <Link href="/finances" passHref>
+          <A variant="styles.navitem" sx={{ ml: 'auto', mr: [3, 4] }}>
+            Finances
+          </A>
+        </Link>
         <A
           href="https://2019.hackpenn.com"
           variant="styles.navitem"
@@ -78,7 +91,7 @@ export default (props) => {
         sx={{
           width: '100%',
           mx: 'auto',
-          flex: '1 1 auto',
+          flex: '1 1 auto'
         }}
       >
         {props.children}
@@ -90,13 +103,13 @@ export default (props) => {
           py: 5,
           width: '100%',
           maxWidth: 'wide',
-          mx: 'auto',
+          mx: 'auto'
         }}
       >
         <Container
           sx={{
             fontSize: 0,
-            py: 3,
+            py: 3
           }}
         >
           <Flex sx={{ justifyContent: 'center' }}>
@@ -132,7 +145,7 @@ export default (props) => {
             sx={{
               mt: [3, 4],
               textAlign: 'center',
-              a: { fontSize: 1 },
+              a: { fontSize: 1 }
             }}
           >
             <A
@@ -148,7 +161,7 @@ export default (props) => {
                 color: 'muted',
                 fontSize: 0,
                 mt: 2,
-                mb: 0,
+                mb: 0
               }}
             >
               Fiscally sponsored by The Hack Foundation.

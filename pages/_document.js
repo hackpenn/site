@@ -12,6 +12,7 @@ export default class extends Document {
       <html lang="en">
         <Head>
           <style>{`:root { supported-color-schemes: light dark; }`}</style>
+          <meta name="format-detection" content="telephone=no" />
         </Head>
         <body>
           <InitializeColorMode />

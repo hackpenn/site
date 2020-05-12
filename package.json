@@ -5,7 +5,7 @@
   "author": "Lachlan Campbell <lachlan@hackpenn.com>",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next"
   },
   "dependencies": {
@@ -13,13 +13,15 @@
     "@hackclub/theme": "^0.1.1",
     "@mdx-js/loader": "^1.5.8",
     "@next/mdx": "^9.4.0",
-    "@rebass/preset": "^4.0.5",
+    "comma-number": "^2.0.1",
+    "load-json-file": "^6.2.0",
     "lodash": "^4.17.15",
     "next": "^9.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "rebass": "^4.0.7",
-    "theme-ui": "^0.3.1"
+    "recharts": "^1.8.5",
+    "theme-ui": "^0.3.1",
+    "unformat-usd": "^0.1.1"
   },
   "license": "MIT"
 }
