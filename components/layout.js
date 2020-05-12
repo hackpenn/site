@@ -1,5 +1,4 @@
-import { Box, Flex, Text, Link as A } from 'rebass'
-import { Styled, useColorMode } from 'theme-ui'
+import { Box, Container, Flex, Text, Link as A, useColorMode } from 'theme-ui'
 import Link from 'next/link'
 import Icon from './icon'
 import Avatar from './avatar'
@@ -22,8 +21,8 @@ const ColorButton = ({ mode, ...props }) => (
       ':hover, :focus': {
         color: 'primary',
         boxShadow: '0 0 0 3px',
-        outline: 'none'
-      }
+        outline: 'none',
+      },
     }}
   >
     <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor">
@@ -40,7 +39,7 @@ const ColorButton = ({ mode, ...props }) => (
   </Box>
 )
 
-export default props => {
+export default (props) => {
   const [mode, setMode] = useColorMode()
 
   return (
@@ -52,7 +51,7 @@ export default props => {
           color: 'primary',
           alignItems: 'center',
           px: 3,
-          py: 3
+          py: 3,
         }}
       >
         <Avatar light size={48} sx={{ mr: 3 }} />
@@ -68,7 +67,7 @@ export default props => {
           2019 site
         </A>
         <ColorButton
-          onClick={e => {
+          onClick={(e) => {
             const next = mode === 'dark' ? 'light' : 'dark'
             setMode(next)
           }}
@@ -79,30 +78,25 @@ export default props => {
         sx={{
           width: '100%',
           mx: 'auto',
-          flex: '1 1 auto'
+          flex: '1 1 auto',
         }}
       >
         {props.children}
       </Box>
-      <Box
+      <Container
         as="footer"
-        variant="container"
         sx={{
           px: 3,
           py: 5,
           width: '100%',
           maxWidth: 'wide',
-          mx: 'auto'
+          mx: 'auto',
         }}
       >
-        <Box
-          variant="container"
+        <Container
           sx={{
-            // display: 'grid',
-            // gridGap: [3, 4],
-            // gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
             fontSize: 0,
-            py: 3
+            py: 3,
           }}
         >
           <Flex sx={{ justifyContent: 'center' }}>
@@ -138,7 +132,7 @@ export default props => {
             sx={{
               mt: [3, 4],
               textAlign: 'center',
-              a: { fontSize: 1 }
+              a: { fontSize: 1 },
             }}
           >
             <A
@@ -154,7 +148,7 @@ export default props => {
                 color: 'muted',
                 fontSize: 0,
                 mt: 2,
-                mb: 0
+                mb: 0,
               }}
             >
               Fiscally sponsored by The Hack Foundation.
@@ -162,8 +156,8 @@ export default props => {
               Nonprofit EIN: 81-2908499.
             </Text>
           </Box>
-        </Box>
-      </Box>
+        </Container>
+      </Container>
     </>
   )
 }

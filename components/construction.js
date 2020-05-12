@@ -15,7 +15,7 @@ export default ({ sx, ...props }) => (
       mt: [3, 4],
       mx: 'auto',
       maxWidth: 512,
-      ...sx
+      ...sx,
     }}
   >
     <Icon glyph="flag" size={32} sx={{ mr: [2, 3] }} />

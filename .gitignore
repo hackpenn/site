@@ -1,6 +1,6 @@
-node_modules/
+node_modules
 package-lock.json
 yarn-error.log
-.cache/
-public/
+.next
+.now
 .DS_Store

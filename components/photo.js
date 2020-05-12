@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
-import { Box, Text, Image } from 'rebass'
-import { useColorMode } from 'theme-ui'
-import theme from './theme'
+import { Box, Card, Text, Image, useColorMode } from 'theme-ui'
+import theme from '../lib/theme'
 
 const Caption = styled(Text)`
   display: block;
@@ -9,20 +8,12 @@ const Caption = styled(Text)`
   line-height: ${theme.lineHeights.body};
   padding: ${theme.space[2]}px ${theme.space[3]}px;
   position: absolute;
-  ${props =>
-    props.captionTop
-      ? `
-    top: 0;
-    border-radius: ${theme.radii.extra}px ${theme.radii.extra}px 0 0;
-  `
-      : `
-    bottom: 0;
-    border-radius: 0 0 ${theme.radii.extra}px ${theme.radii.extra}px;
-  `};
+  bottom: 0;
+  border-radius: 0 0 ${theme.radii.extra}px ${theme.radii.extra}px;
   width: 100%;
   max-width: 100%;
   z-index: 0;
-  ${props =>
+  ${(props) =>
     props.colorMode === 'dark'
       ? `
           background-color: rgba(0, 0, 0, 0.875);
@@ -51,17 +42,17 @@ const Photo = ({ src, alt, showAlt, wide, ...props }) => {
   const [colorMode] = useColorMode()
   const showCaption = showAlt && alt
   return (
-    <Box
+    <Card
       {...props}
-      variant="sheet"
       sx={{
-        p: 0,
+        p: [0, 0, 0],
+        borderRadius: 'extra',
         height: ['18rem', wide ? '66vh' : '20rem', wide ? '75vh' : '24rem'],
         minHeight: ['18rem', '20rem', '24rem'],
         position: 'relative',
         maxWidth: '100%',
         gridColumn: [null, wide ? 'span 2' : null],
-        ...props.sx
+        ...props.sx,
       }}
     >
       <Image
@@ -71,7 +62,7 @@ const Photo = ({ src, alt, showAlt, wide, ...props }) => {
         sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
       />
       {showCaption && <Caption colorMode={colorMode} children={alt} />}
-    </Box>
+    </Card>
   )
 }
 

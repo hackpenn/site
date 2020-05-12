@@ -4,7 +4,7 @@ export default ({
   title = 'Hack Pennsylvania – PA’s largest high school hackathon',
   description = 'January 2019, 111 hackers came together for Pennsylvania’s largest high school hackathon ever.',
   image = 'https://2019.hackpenn.com/card.png',
-  url = 'https://hackpenn.com'
+  url = 'https://hackpenn.com',
 }) => (
   <Head>
     <title>{title}</title>
@@ -47,27 +47,28 @@ export default ({
     <meta name="apple-mobile-web-app-title" content="@hackpenn/site" />
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
-        name: 'hackpenn',
-        url: 'https://hackpenn.com',
-        logo: 'https://2019.hackpenn.com/flag.png',
-        sameAs: [
-          'https://twitter.com/hackpenn',
-          'https://www.instagram.com/hackpenn',
-          'https://www.facebook.com/hackpenn'
-        ],
-        contactPoint: [
-          {
-            '@type': 'ContactPoint',
-            email: 'contact@hackpenn.com',
-            contactType: 'customer support',
-            url: 'https://hackpenn.com'
-          }
-        ]
-      })}}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'hackpenn',
+          url: 'https://hackpenn.com',
+          logo: 'https://2019.hackpenn.com/flag.png',
+          sameAs: [
+            'https://twitter.com/hackpenn',
+            'https://www.instagram.com/hackpenn',
+            'https://www.facebook.com/hackpenn',
+          ],
+          contactPoint: [
+            {
+              '@type': 'ContactPoint',
+              email: 'contact@hackpenn.com',
+              contactType: 'customer support',
+              url: 'https://hackpenn.com',
+            },
+          ],
+        }),
+      }}
     />
   </Head>
 )
-
