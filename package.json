@@ -5,7 +5,7 @@
   "author": "Lachlan Campbell <lachlan@hackpenn.com>",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next"
   },
   "dependencies": {
