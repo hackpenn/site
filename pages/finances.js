@@ -90,7 +90,7 @@ const CategoriesChart = ({ data }) => {
   return (
     <ResponsiveContainer
       width="100%"
-      height={128}
+      height={192}
       padding={{ top: 32, left: 32 }}
     >
       <BarChart data={data} width={256} height={128}>
@@ -136,11 +136,18 @@ export default ({ account, transactions, chart, categories }) => (
       </Text>
       <Grid columns={[null, '1fr auto']} gap={[3, 4]} mt={4} mb={[4, 5]}>
         <CategoriesChart data={chart} />
-        <Stat
-          lg
-          value={commaNumber(account.balance / 100)}
-          label="Current balance"
-        />
+        <Grid columns={[2, 1]} gap={3}>
+          <Stat
+            lg
+            value={commaNumber(account.balance / 100)}
+            label="Current balance"
+          />
+          <Stat
+            lg
+            value={commaNumber(account.income / 100)}
+            label="Total raised"
+          />
+        </Grid>
       </Grid>
     </Container>
     <Container variant="wide" px={[0, 3]}>
@@ -221,6 +228,6 @@ export const getStaticProps = async () => {
     { headers: { Authorization: '' } }
   ).then((r) => r.json())
   */
-  const account = { balance: 240921 }
+  const account = { balance: 240921, income: 1476791 }
   return { props: { transactions: list, categories, chart, account } }
 }
