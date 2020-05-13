@@ -10,7 +10,7 @@ export const Banner = (props) => (
       color: 'white',
       textShadow: '0 2px 4px rgba(0,0,0,.I 75)',
       py: [4, 5, 6, 7],
-      mb: [4, 5],
+      mb: [4, 5]
     }}
   >
     <Base
@@ -22,7 +22,7 @@ export const Banner = (props) => (
           fontSize: [5, 6, 7],
           lineHeight: 'tight',
           mt: [0, -2, -4, -5],
-          mb: 3,
+          mb: 3
         },
         h2: {
           fontSize: [2, 3, 4],
@@ -31,21 +31,21 @@ export const Banner = (props) => (
           fontWeight: 'body',
           mb: 2,
           a: {
-            color: 'red',
-          },
+            color: 'red'
+          }
         },
         p: {
-          mb: 4,
+          mb: 4
         },
         ul: {
           listStyle: 'none',
           display: 'flex',
           p: 0,
-          m: 0,
+          m: 0
         },
         li: {
-          mr: 3,
-        },
+          mr: 3
+        }
       }}
     />
   </Box>
@@ -62,14 +62,14 @@ export const Container = ({ wide, ...props }) => (
       h2: {
         fontSize: [3, 4, 5],
         mt: [4, 5],
-        mb: [2, 3],
+        mb: [2, 3]
       },
       h3: {
         fontSize: [2, 3, 4],
         mt: [3, 4],
-        mb: [2, 3],
+        mb: [2, 3]
       },
-      ...props.sx,
+      ...props.sx
     }}
   />
 )
@@ -85,7 +85,7 @@ export const Callout = (props) => (
       boxShadow: 'sheet',
       fontSize: [2, 3],
       mb: [4, 5],
-      ...props.sx,
+      ...props.sx
     }}
   />
 )
@@ -100,12 +100,12 @@ export const List = (props) => (
         listStyle: 'none',
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
-        gridGap: [3, 4],
+        gridGap: [3, 4]
       },
       a: {
         fontWeight: 'bold',
         color: 'primary',
-        textDecoration: 'none',
+        textDecoration: 'none'
       },
       em: {
         display: 'block',
@@ -113,9 +113,9 @@ export const List = (props) => (
         fontFamily: 'mono',
         fontWeight: 'body',
         fontStyle: 'normal',
-        fontSize: 0,
+        fontSize: 0
       },
-      ...props.sx,
+      ...props.sx
     }}
   />
 )
@@ -132,20 +132,20 @@ export const Gallery = (props) => (
       'ul, ol': {
         textAlign: [null, 'right'],
         listStyle: 'none',
-        pl: 0,
+        pl: 0
       },
       'p, ol, ul': {
         maxWidth: 1080 / 2,
-        p: [3, 4],
+        p: [3, 4]
       },
       'p, li': {
         color: 'muted',
         fontFamily: 'mono',
         fontSize: [2, 3],
         mt: 0,
-        mb: 2,
+        mb: 2
       },
-      ...props.sx,
+      ...props.sx
     }}
   />
 )
@@ -160,22 +160,22 @@ export const Team = (props) => (
         listStyle: 'none',
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
-        gridGap: [3, 4],
+        gridGap: [3, 4]
       },
       li: {
         display: 'grid',
         gridGap: 3,
         gridTemplateColumns: ['64px 1fr', '72px 1fr'],
-        alignItems: 'center',
+        alignItems: 'center'
       },
       p: {
         my: 0,
         '&:first-child': {
-          lineHeight: 0,
-        },
+          lineHeight: 0
+        }
       },
       strong: {
-        fontSize: [1, 2],
+        fontSize: [1, 2]
       },
       em: {
         display: 'block',
@@ -186,8 +186,8 @@ export const Team = (props) => (
         fontSize: [0, 1],
         my: 0,
         a: {
-          color: 'primary',
-        },
+          color: 'primary'
+        }
       },
       img: {
         flexShrink: 'none',
@@ -196,9 +196,9 @@ export const Team = (props) => (
         height: [64, 72],
         objectFit: 'cover',
         objectPosition: 'center',
-        mr: 3,
+        mr: 3
       },
-      ...props.sx,
+      ...props.sx
     }}
   />
 )

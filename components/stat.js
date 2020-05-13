@@ -35,9 +35,7 @@ const Stat = ({
     {...props}
     sx={{
       flexDirection: reversed ? 'column-reverse' : 'column',
-      gridColumn: lg
-        ? ['initial', 'span 1']
-        : 'initial',
+      gridColumn: lg ? ['initial', 'span 1'] : 'initial',
       lineHeight: 1,
       ...props.sx
     }}

@@ -33,81 +33,81 @@ const data = {
     {
       name: 'ZEIT',
       link: 'https://zeit.co',
-      image: 'zeit.svg',
+      image: 'zeit.svg'
     },
     {
       name: 'Mike’s TV & Appliance',
       link: 'http://www.mikesvideo.com/',
-      image: 'mikes.png',
+      image: 'mikes.png'
     },
     {
       name: 'Invent Penn State',
       link: 'https://invent.psu.edu',
-      image: 'ips.png',
+      image: 'ips.png'
     },
     {
       name: 'Linode',
       link: 'https://linode.com',
-      image: 'linode.png',
+      image: 'linode.png'
     },
     {
       name: 'AGI',
       link: 'http://www.agintegrated.com/',
-      image: 'agi.gif',
+      image: 'agi.gif'
     },
     {
       name: '1Password',
       link: 'https://1password.com',
-      image: '1password.png',
+      image: '1password.png'
     },
     {
       name: 'Lambda School',
       link: 'https://lambdaschool.com',
-      image: 'lambda.png',
+      image: 'lambda.png'
     },
     {
       name: 'Repl.it',
       link: 'https://repl.it',
-      image: 'replit.png',
+      image: 'replit.png'
     },
     {
       name: 'Think Company',
       link: 'https://www.thinkcompany.com//',
-      image: 'thinkco.png',
+      image: 'thinkco.png'
     },
     {
       name: 'Ben Franklin Technology Partners',
       link: 'https://benfranklin.org/',
-      image: 'ben-franklin.jpg',
+      image: 'ben-franklin.jpg'
     },
     {
       name: 'Hack Club Bank',
       link: 'https://hackclub.com/bank',
-      image: 'hackclub-bank.svg',
-    },
+      image: 'hackclub-bank.svg'
+    }
   ],
   additionalSupport: [
     {
       name: 'Sketch',
       link: 'https://sketchapp.com/',
-      image: 'sketch.svg',
+      image: 'sketch.svg'
     },
     {
       name: 'Notion',
       link: 'https://www.notion.so/product',
-      image: 'notion.svg',
+      image: 'notion.svg'
     },
     {
       name: '.tech Domains',
       link: 'https://get.tech/',
-      image: 'dottech.png',
+      image: 'dottech.png'
     },
     {
       name: 'ExpressVPN',
       link: 'https://www.expressvpn.com/',
-      image: 'expressvpn.png',
-    },
-  ],
+      image: 'expressvpn.png'
+    }
+  ]
 }
 
 const Sponsors = (props) => {

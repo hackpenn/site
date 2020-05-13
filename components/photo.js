@@ -52,7 +52,7 @@ const Photo = ({ src, alt, showAlt, wide, ...props }) => {
         position: 'relative',
         maxWidth: '100%',
         gridColumn: [null, wide ? 'span 2' : null],
-        ...props.sx,
+        ...props.sx
       }}
     >
       <Image
