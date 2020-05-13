@@ -235,7 +235,7 @@ export default ({ account, transactions, chart, cal, categories }) => (
       <Heading
         as="h2"
         variant="headline"
-        sx={{ mt: [4, 5], mb: 3, textAlign: [null, 'center'] }}
+        sx={{ mt: [4, 5], px: 3, mb: 3, textAlign: [null, 'center'] }}
       >
         Budget
       </Heading>
