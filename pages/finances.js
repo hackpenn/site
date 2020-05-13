@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   Container,
   Flex,
@@ -12,19 +13,25 @@ import {
 } from 'theme-ui'
 import {
   filter,
+  first,
   groupBy,
   isEmpty,
+  last,
   map,
   orderBy,
   round,
+  sortBy,
   sum,
   toNumber,
   uniq
 } from 'lodash'
 import commaNumber from 'comma-number'
 import usdFormat from '../lib/format-usd'
+import quantizeScale from '../lib/quantize'
 import { ResponsiveContainer, BarChart, Bar, Cell, YAxis } from 'recharts'
+import CalendarHeatmap from 'react-calendar-heatmap'
 import Stat, { StatGrid } from '../components/stat'
+import Sponsors from '../components/sponsors'
 import Meta from '../components/meta'
 
 const Transactions = ({ data, ...props }) => (
@@ -35,7 +42,7 @@ const Transactions = ({ data, ...props }) => (
       borderSpacing: 0,
       borderCollapse: 'separate',
       maxWidth: '100%',
-      'th,td': { px: [1, 2] }
+      'th,td': { px: 3 }
     }}
     {...props}
   >
@@ -55,12 +62,12 @@ const Transactions = ({ data, ...props }) => (
           as="tr"
           bg={row.amount >= 0 ? 'pos' : 'neg'}
           sx={{
-            td: { py: 1, lineHeight: 1.75 }
+            td: { py: 2, borderBottom: '1px solid rgba(0,0,0,0.0625)' }
           }}
           key={row.id}
         >
           <td>{row.memo}</td>
-          <Text as="td" sx={{ textAlign: 'right' }}>
+          <Text as="td" sx={{ textAlign: 'right', whiteSpace: 'nowrap' }}>
             {usdFormat(row.amount / 100)}
           </Text>
         </Box>
@@ -100,7 +107,6 @@ const CategoriesChart = ({ data }) => {
           label={{
             dataKey: 'name',
             fontSize: 12,
-            position: 'topInside',
             fill: theme.colors.text
           }}
         >
@@ -113,28 +119,45 @@ const CategoriesChart = ({ data }) => {
   )
 }
 
-export default ({ account, transactions, chart, categories }) => (
+export default ({ account, transactions, chart, cal, categories }) => (
   <>
     <Meta
       title="Finances"
       description="Explore Hack Pennsylvania’s fully-transparent finances, streamed from Hack Club Bank."
     />
-    <Container>
-      <Heading as="h1" variant="title" mt={4}>
+    <Container sx={{ maxWidth: [null, 'copy', 'copyPlus'] }}>
+      <Heading as="h1" variant="title" mt={4} sx={{ fontSize: [5, 6] }}>
         Finances
       </Heading>
       <Text as="p" variant="subtitle" mt={3} sx={{ lineHeight: 'caption' }}>
         We believe in transparency. Using{' '}
-        <Link href="https://hackclub.com/bank/" color="alt">
-          Hack Club Bank’s
-        </Link>{' '}
-        new “Transparency Mode,” we’ve{' '}
-        <Link href="https://bank.hackclub.com/hackpenn" color="alt">
+        <Link href="https://hackclub.com/bank/">Hack Club Bank’s</Link> new
+        “Transparency Mode,” we’ve{' '}
+        <Link href="https://bank.hackclub.com/hackpenn">
           fully opened our finances
         </Link>
         . This page visualizes how we spent the event’s sponsorship money.
       </Text>
-      <Grid columns={[null, '1fr auto']} gap={[3, 4]} mt={4} mb={[4, 5]}>
+      <Grid
+        columns={[null, '1fr auto']}
+        gap={4}
+        mt={4}
+        sx={{
+          alignItems: [null, 'start'],
+          svg: { maxWidth: '100%' },
+          '.recharts-cartesian-axis-line,.recharts-cartesian-axis-tick-line': {
+            stroke: 'sunken'
+          },
+          '.react-calendar-heatmap text': { fontSize: '6px' },
+          '.react-calendar-heatmap .color-empty': { fill: 'sunken' },
+          '.react-calendar-heatmap .color-1': { fill: 'one' },
+          '.react-calendar-heatmap .color-2': { fill: 'two' },
+          '.react-calendar-heatmap .color-3': { fill: 'three' },
+          '.react-calendar-heatmap .color-4': { fill: 'four' },
+          '.recharts-label': { fill: 'text' },
+          text: { fill: 'muted' }
+        }}
+      >
         <CategoriesChart data={chart} />
         <Grid columns={[2, 1]} gap={3}>
           <Stat
@@ -148,32 +171,71 @@ export default ({ account, transactions, chart, categories }) => (
             label="Total raised"
           />
         </Grid>
-      </Grid>
-    </Container>
-    <Container variant="wide" px={[0, 3]}>
-      <Card as="article">
-        {categories.map((cat) => (
-          <Box as="section" key={cat.name} mb={3}>
-            <Grid
-              as="header"
-              columns={[null, null, '1fr auto']}
-              sx={{ mb: 3, gridColumnGap: 3, alignItems: 'end' }}
+        <CalendarHeatmap
+          startDate={new Date(cal.startDate)}
+          endDate={new Date(cal.endDate)}
+          values={cal.values}
+          showWeekdayLabels
+          classForValue={(value) => {
+            if (!value) return 'color-empty'
+            return `color-${value.count}`
+          }}
+          aria-hidden
+        />
+        <Grid columns={[2, 1]} gap={3}>
+          <Stat value="20 days" label="First invoice → event" unit="" />
+          <Stat value="10" label="Sponsors" unit="" />
+          <Box sx={{ gridColumn: ['span 2', 'auto'] }}>
+            <Button
+              as="a"
+              href="https://bank.hackclub.com/hackpenn"
+              sx={{ borderRadius: 'circle' }}
             >
-              <Heading as="h2" variant="headline" mb={0}>
-                {cat.name}
-              </Heading>
-              <Flex as="aside">
-                <Amount value={cat.total} />
-              </Flex>
-            </Grid>
-            <Transactions data={cat.transactions} />
+              See more on Bank →
+            </Button>
           </Box>
-        ))}
-      </Card>
+        </Grid>
+      </Grid>
       <Heading
         as="h2"
         variant="headline"
-        sx={{ mt: [4, 5], mb: 3, textAlign: 'center' }}
+        sx={{ mt: 4, mb: 3, textAlign: [null, 'center'] }}
+      >
+        Sponsors
+      </Heading>
+      <Sponsors />
+    </Container>
+    <Container as="section" variant="wide" px={[0, 3, 4]}>
+      <Heading
+        as="h2"
+        variant="headline"
+        sx={{ mt: [4, 5], px: 3, mb: 3, textAlign: [null, 'center'] }}
+      >
+        Transactions
+      </Heading>
+      <Grid gap={[3, 4]} columns={[null, null, 2]} as="article">
+        {categories.map((cat) => (
+          <Card as="section" key={cat.name} sx={{ width: '100%', p: [0, 0] }}>
+            <Grid
+              as="header"
+              columns={[null, null, '1fr auto']}
+              sx={{ p: 3, gridColumnGap: 3, alignItems: 'end' }}
+            >
+              <Heading as="h3" variant="headline" my={0}>
+                {cat.name}
+              </Heading>
+              <Flex as="aside">
+                <Amount value={cat.total} half />
+              </Flex>
+            </Grid>
+            <Transactions data={cat.transactions} />
+          </Card>
+        ))}
+      </Grid>
+      <Heading
+        as="h2"
+        variant="headline"
+        sx={{ mt: [4, 5], mb: 3, textAlign: [null, 'center'] }}
       >
         Budget
       </Heading>
@@ -186,10 +248,27 @@ export default ({ account, transactions, chart, categories }) => (
         />
       </Card>
     </Container>
+    <Container
+      as="section"
+      variant="narrow"
+      sx={{ textAlign: [null, 'center'] }}
+    >
+      <Text as="p" sx={{ fontSize: [2, 3] }}>
+        Organizing an event of your own?
+      </Text>
+      <Button
+        as="a"
+        href="https://notebook.lachlanjc.me/2020-01-19_how_to_start_your_first_hackathon/"
+        sx={{ borderRadius: 'circle', mt: 3 }}
+      >
+        Read this →
+      </Button>
+    </Container>
     <Image
       src="https://d1fmxjrxw87eps.cloudfront.net/2020-05-12T17:30:43-04:00.jpeg"
       alt="Scene from hack penn"
       width="100%"
+      mt={[4, 5]}
     />
   </>
 )
@@ -197,31 +276,58 @@ export default ({ account, transactions, chart, categories }) => (
 export const getStaticProps = async () => {
   const unFormatUSD = require('unformat-usd')
   const loadJSON = require('load-json-file')
+
+  // Load transactions
   let list = await loadJSON('./public/finances.json')
   list = filter(list, (l) => !isEmpty(l.category))
   list = filter(list, (l) => !l.memo.includes('Transfer'))
+  list = orderBy(list, 'created_at')
   list = list.map((row) => {
     row.amount = toNumber((row.amount || '0').replace(/[\$,]/g, '')) * 100
     return row
   })
+
+  // Categorize
   const categories = []
   uniq(map(list, 'category'))
     .sort()
     .map((name) => {
-      const transactions = orderBy(
-        filter(list, ['category', name]),
-        'created_at'
-      )
+      const transactions = filter(list, ['category', name])
       const amounts = map(transactions, 'amount')
       const pos = sum(filter(amounts, (a) => a > 0))
       const neg = sum(filter(amounts, (a) => a < 0))
       const total = neg + pos
       categories.push({ name, pos, neg, total, transactions })
     })
+
+  // Categories chart data
   const chart = []
   filter(categories, (c) => c.total < 0).forEach(({ name, total }) =>
     chart.push({ name, total: (total * -1) / 100 })
   )
+
+  // Calendar heatmap data
+  const days = groupBy(
+    list.filter((l) => l.created_at?.startsWith('2019')),
+    (t) => t.created_at?.substring(0, 10)
+  )
+  let dailies = []
+  let values = Object.keys(days).map((date) => {
+    const total = sum(
+      map(days[date], 'amount').map((i) => (i >= 0 ? i : -1 * i))
+    )
+    dailies.push(total)
+    return { date, total }
+  })
+  dailies = sortBy(dailies)
+  const quantize = quantizeScale([1, 2, 3, 4], first(dailies), last(dailies))
+  values = values.map((v) => ({ ...v, count: quantize(v.total) }))
+  const cal = {
+    startDate: '2018-12-31',
+    endDate: '2019-04-25',
+    values
+  }
+
   /*
   const account = await fetch(
     'http://zapdos.servers.hackclub.com:3001/integrations/frankly?page=1',
@@ -229,5 +335,5 @@ export const getStaticProps = async () => {
   ).then((r) => r.json())
   */
   const account = { balance: 240921, income: 1476791 }
-  return { props: { transactions: list, categories, chart, account } }
+  return { props: { transactions: list, categories, chart, cal, account } }
 }

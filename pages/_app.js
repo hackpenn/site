@@ -24,11 +24,6 @@ export default class App extends NextApp {
               backgroundColor: theme.colors.background,
               margin: 0,
               minHeight: '100vh',
-              display: 'flex',
-              flexDirection: 'column',
-              '*': {
-                boxSizing: 'border-box',
-              },
             },
           })}
         />

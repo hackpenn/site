@@ -27,8 +27,8 @@ const Stat = ({
   color = 'text',
   of,
   reversed = false,
-  half = false,
   lg = false,
+  half = false,
   ...props
 }) => (
   <Flex
@@ -37,8 +37,6 @@ const Stat = ({
       flexDirection: reversed ? 'column-reverse' : 'column',
       gridColumn: lg
         ? ['initial', 'span 1']
-        : half
-        ? 'span 1 !important'
         : 'initial',
       lineHeight: 1,
       ...props.sx
@@ -49,7 +47,7 @@ const Stat = ({
         flexDirection: unit === '%' ? 'row-reverse' : 'row',
         alignItems: 'flex-start',
         justifyContent: unit === '%' ? 'flex-end' : 'flex-start',
-        my: 2,
+        mb: 2,
         position: 'relative'
       }}
     >
@@ -72,7 +70,7 @@ const Stat = ({
         as="span"
         sx={{
           color,
-          fontSize: lg ? [4, 5] : 4,
+          fontSize: lg ? [4, 5] : half ? 3 : 4,
           fontWeight: 'stat',
           my: 0
         }}
@@ -107,8 +105,7 @@ const Stat = ({
         as="span"
         variant="caption"
         sx={{
-          fontWeight: 'bold',
-          fontSize: half ? 0 : [0, 1],
+          fontSize: [0, 1],
           textTransform: 'uppercase'
         }}
         children={label}
