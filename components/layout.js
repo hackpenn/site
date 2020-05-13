@@ -7,7 +7,7 @@ const ColorButton = ({ mode, ...props }) => (
   <Box
     as="button"
     {...props}
-    title="Cycle Color Mode"
+    title="Invert colors"
     sx={{
       display: 'inline-block',
       appearance: 'none',
