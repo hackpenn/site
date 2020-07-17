@@ -15,7 +15,7 @@
     "@next/mdx": "^9.4.0",
     "comma-number": "^2.0.1",
     "load-json-file": "^6.2.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "next": "^9.4.0",
     "react": "^16.13.1",
     "react-calendar-heatmap": "^1.8.1",
