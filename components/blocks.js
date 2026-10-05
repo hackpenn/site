@@ -4,7 +4,7 @@ export const Banner = (props) => (
   <Box
     sx={{
       backgroundImage:
-        'linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0.375)), url(https://cdn.glitch.com/3d283e0f-19c4-4546-b0b2-223ec3a7dc23%2Fceremony.jpg?v=1565769222245)',
+        'linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0.375)), url(/images/gallery/ceremony.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       color: 'white',

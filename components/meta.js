@@ -8,7 +8,7 @@ const Meta = ({
   name = 'Hack Pennsylvania',
   title = 'Hack Pennsylvania – PA’s largest high school hackathon',
   description = 'January 2019, 111 hackers came together for Pennsylvania’s largest high school hackathon ever.',
-  image = 'https://2019.hackpenn.com/card.png',
+  image = '/card.png',
   url = 'https://hackpenn.com'
 }) => (
   <Head>
@@ -42,21 +42,21 @@ const Meta = ({
     <link
       key="icon"
       rel="shortcut icon"
-      href="https://2019.hackpenn.com/icons-fc76d37f75db83ce9f82f7672f91551e/favicon.ico"
+      href="/favicon.ico"
     />
     <link
       key="favicon_16"
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="https://2019.hackpenn.com/icons-fc76d37f75db83ce9f82f7672f91551e/favicon-16x16.png"
+      href="/favicon-16x16.png"
     />
     <link
       key="favicon_32"
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="https://2019.hackpenn.com/icons-fc76d37f75db83ce9f82f7672f91551e/favicon-32x32.png"
+      href="/favicon-32x32.png"
     />
     <script
       key="ld_json"
@@ -67,7 +67,7 @@ const Meta = ({
           '@type': 'Organization',
           name: 'hackpenn',
           url: 'https://hackpenn.com',
-          logo: 'https://2019.hackpenn.com/flag.png',
+          logo: '/flag.png',
           sameAs: [
             'https://twitter.com/hackpenn',
             'https://www.instagram.com/hackpenn',

@@ -118,7 +118,7 @@ const Sponsors = (props) => {
         <a key={sponsor.name} href={`${sponsor.link}`}>
           <img
             alt={sponsor.name}
-            src={`//2019.hackpenn.com/sponsors/${sponsor.image}`}
+            src={`/images/sponsors/${sponsor.image}`}
             key={sponsor.image}
           />
         </a>
