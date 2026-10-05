@@ -4,3 +4,4 @@ yarn-error.log
 .next
 .now
 .DS_Store
+out/
